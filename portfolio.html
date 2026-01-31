@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Kanawade - AI Engineer & Backend Developer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2b;
+            --bg-tertiary: #252b3a;
+            --accent-primary: #7dd3c0;
+            --accent-secondary: #88b3f7;
+            --accent-tertiary: #c4a1e0;
+            --text-primary: #e6edf3;
+            --text-secondary: #9ba3b4;
+            --text-muted: #6b7280;
+            --border-color: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Animated background */
+        .bg-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.08;
+        }
+
+        .bg-animated::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 50%, var(--accent-primary) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--accent-secondary) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, var(--accent-tertiary) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(-5%, 10%) rotate(120deg);
+            }
+
+            66% {
+                transform: translate(5%, -10%) rotate(240deg);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 4rem;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            font-size: 0.9rem;
+            color: var(--accent-primary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            animation: fadeInUp 1s ease-out 0.3s both;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            font-weight: 400;
+        }
+
+        .hero-highlight {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .btn {
+            padding: 1rem 2.2rem;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(125, 211, 192, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-container:hover .profile-image::before {
+            opacity: 1;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .badge-1 {
+            top: 20px;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            bottom: 40px;
+            left: -40px;
+            animation-delay: 1s;
+        }
+
+        .badge-highlight {
+            color: var(--accent-primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+            transition: height 0.4s ease;
+        }
+
+        .experience-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 60px rgba(125, 211, 192, 0.15);
+        }
+
+        .experience-card:hover::before {
+            height: 100%;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: var(--bg-tertiary);
+            color: var(--accent-secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .experience-description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--accent-secondary);
+            box-shadow: 0 25px 70px rgba(136, 179, 247, 0.2);
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .skill-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+        }
+
+        .skill-category-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            text-align: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-link {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(125, 211, 192, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .hero,
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .profile-container {
+                width: 350px;
+                height: 350px;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-animated"></div>
+
+    <nav>
+        <div class="logo">AK</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">Agentic AI Engineer & Backend Developer</span>
+                <h1 class="hero-title">Aditya Kanawade</h1>
+                <p class="hero-subtitle">
+                    Building intelligent <span class="hero-highlight">multi-agent systems</span> that autonomously
+                    reason, plan, and execute complex workflows. Specialized in <span
+                        class="hero-highlight">LiteLLM</span>,
+                    <span class="hero-highlight">FastAPI</span>, <span class="hero-highlight">Django</span>, and
+                    production-grade <span class="hero-highlight">Agentic AI platforms</span>.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="profile picture.png" alt="Aditya Kanawade - AI Engineer & Backend Developer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <div class="section-label">Career Journey</div>
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Associate Software Engineer</h3>
+                        <div class="experience-company">Itanta Analytics</div>
+                    </div>
+                    <div class="experience-date">Feb 2024 - Present</div>
+                </div>
+                <div class="experience-tags">
+                    <span class="tag">Django</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Gen AI</span>
+                    <span class="tag">Google Cloud</span>
+                    <span class="tag">APIs</span>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Architected and developed an <strong>Agentic AI-powered analytics platform</strong> - a
+                            flagship product enabling autonomous data integration, analysis, and visualization through
+                            intelligent AI agents</li>
+                        <li>Built multi-agent system with conversation-driven configuration agents and autonomous
+                            code-generation agents capable of reasoning, planning, and executing complex analytical
+                            workflows</li>
+                        <li>Designed microservices architecture (Django orchestration, FastAPI AI server, RabbitMQ code
+                            sandbox) with sophisticated caching achieving <strong>95% time reduction</strong> in
+                            dashboard generation</li>
+                        <li>Enhanced robustness of industrial data connectors (SQL, OPC UA, MQTT) for real-time
+                            manufacturing data acquisition, improving reliability by <strong>25%</strong> and reducing
+                            latency by <strong>40%</strong></li>
+                        <li>Strengthened expertise in LiteLLM multi-provider integration, race strategy optimization,
+                            prompt engineering, RESTful API design, and distributed system architecture for
+                            production-grade AI applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <div class="section-label">Featured Work</div>
+            <h2 class="section-title">Key Projects</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-badge">🏆 Global ProveIt Conference 2025</span>
+                <h3 class="project-title">Agentic AI-Powered Analytics Platform (Multi-Agent System)</h3>
+                <p class="project-description">
+                    Architected an advanced <strong>Agentic AI platform</strong> featuring autonomous agents that
+                    reason, plan, and execute complex data workflows. Built triple-module architecture
+                    (INTEGRATE-ANALYZE-VISUALIZE) with intelligent agents for conversational data source configuration
+                    and autonomous Python code generation. Engineered microservices system with Django orchestration,
+                    FastAPI AI server using <strong>LiteLLM</strong> for multi-provider LLM integration with
+                    <strong>race strategy</strong> for optimal response times, and RabbitMQ-based secure code execution
+                    sandbox. Implemented
+                    schema-aware agents with multi-step reasoning, sophisticated caching strategies (code + filtered
+                    code cache), and 15+ dynamic visualization types. Platform autonomously handles industrial IoT
+                    monitoring, real-time data analysis, and intelligent dashboard filtering. Presented at
+                    <strong>Global ProveIt Conference 2025</strong> (500+ attendees) as breakthrough innovation in
+                    <strong>Agentic AI</strong> applications.
+                </p>
+                <div class="project-tech">
+
+                    <span class="tag">LiteLLM</span>
+
+                    <span class="tag">Django</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-badge">Product Development</span>
+                <h3 class="project-title">Industrial Data Connectors Platform</h3>
+                <p class="project-description">
+                    Engineered and optimized robust data acquisition connectors for manufacturing industries, enabling
+                    seamless real-time data ingestion from SQL databases, OPC UA servers, and MQTT protocols. Improved
+                    connector reliability by <strong>25%</strong> and reduced data latency by <strong>40%</strong>,
+                    supporting critical production monitoring for enterprise clients.
+                </p>
+                <div class="project-tech">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">OPC UA</span>
+                    <span class="tag">MQTT</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">MongoDB</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <div class="section-label">Technical Expertise</div>
+            <h2 class="section-title">Skills & Technologies</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 class="skill-category-title">🤖 AI & Machine Learning</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Generative AI</span>
+                    <span class="skill-item">LangChain</span>
+                    <span class="skill-item">OpenAI GPT</span>
+                    <span class="skill-item">Machine Learning</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">💻 Backend Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Django</span>
+                    <span class="skill-item">Flask</span>
+                    <span class="skill-item">FastAPI</span>
+                    <span class="skill-item">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">🗄️ Databases & Cloud</h3>
+                <div class="skill-list">
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Google Cloud</span>
+                    <span class="skill-item">AWS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">🛠️ Tools & Other</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">C++</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Let's Build Something Amazing</h2>
+            <p class="contact-subtitle">
+                Open to collaborations, consulting, and full-time opportunities in AI/ML and backend development
+            </p>
+            <div class="contact-links">
+                <a href="mailto:adityakanawade1234@gmail.com" class="contact-link">
+                    📧 Email
+                </a>
+                <a href="https://linkedin.com/in/AdityaKanawade0565" class="contact-link" target="_blank">
+                    💼 LinkedIn
+                </a>
+                <a href="tel:+919405657088" class="contact-link">
+                    📱 +91 9405657088
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Aditya Kanawade. Crafted with precision and passion.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.section-header, .experience-card, .project-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
