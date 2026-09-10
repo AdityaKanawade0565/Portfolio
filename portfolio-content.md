@@ -177,7 +177,7 @@ Open to conversations on Agentic AI systems, scalable backend architectures, and
 
 **Contact Links:**
 - Email: adityakanawade1234@gmail.com
-- LinkedIn: https://linkedin.com/in/AdityaKanawade0565
+- LinkedIn: https://www.linkedin.com/in/aditya-kanawade-643549242
 - GitHub: https://github.com/AdityaKanawade0565
 - Phone: +91 9405657088
 

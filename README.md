@@ -37,7 +37,7 @@ Portfolio/
 ## 📫 Contact
 
 - **Email**: adityakanawade1234@gmail.com
-- **LinkedIn**: [AdityaKanawade0565](https://linkedin.com/in/AdityaKanawade0565)
+- **LinkedIn**: [aditya-kanawade](https://www.linkedin.com/in/aditya-kanawade-643549242)
 - **Phone**: +91 9405657088
 
 ---
