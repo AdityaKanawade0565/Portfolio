@@ -11,11 +11,29 @@ This file contains all the text content for the portfolio website. Edit this fil
 **Name:** Aditya Kanawade
 
 **Subtitle:**
-Building intelligent **multi-agent systems** that autonomously reason, plan, and execute complex workflows. Specialized in **LiteLLM**, **FastAPI**, **Django**, and production-grade **Agentic AI platforms**.
+Architecting production-grade **multi-agent systems**, **ReAct orchestration engines**, and **hybrid LLM pipelines** that autonomously reason, plan, and execute complex workflows. Specialized in **LangGraph**, **FastAPI**, **LiteLLM**, **Pydantic/Instructor**, and **VectorDB RAG semantic caching**.
 
 **CTA Buttons:**
 - Primary: Get In Touch (#contact)
 - Secondary: View Projects (#projects)
+- Tertiary: Download CV (Aditya cv v2.pdf)
+
+---
+
+## Core Competencies
+
+**Section Label:** Technical Mastery
+
+**Section Title:** Core Competencies
+
+### 1. 🏗️ Backend Architecture
+Designing distributed microservice patterns, high-throughput asynchronous services, and multi-threaded background processing pipelines capable of handling enterprise workloads.
+
+### 2. 🤖 AI Systems & LLM Engineering
+Multi-agent workflow design, ReAct orchestration engines, vector-based RAG semantic caching, and strict schema-constrained outputs using modern LLM frameworks.
+
+### 3. 🗄️ Database & Data Engineering
+Complex MongoDB aggregation pipelines, high-throughput time-series data logging, industrial IoT/SCADA connectors (OPC UA, MQTT, SQL), and automated validation pipelines.
 
 ---
 
@@ -27,20 +45,18 @@ Building intelligent **multi-agent systems** that autonomously reason, plan, and
 
 ### Experience 1
 
-**Job Title:** Associate Software Engineer
+**Job Title:** Software Engineer
 
 **Company:** Itanta Analytics
 
 **Duration:** Feb 2024 - Present
 
-**Tags:** Django, Flask, Gen AI, Google Cloud, APIs
+**Tags:** Backend Development, Django, Flask, FastAPI, LangGraph, Gen AI, LiteLLM, Google Cloud, APIs
 
 **Description:**
-- Architected and developed an **Agentic AI-powered analytics platform** - a flagship product enabling autonomous data integration, analysis, and visualization through intelligent AI agents
-- Built multi-agent system with conversation-driven configuration agents and autonomous code-generation agents capable of reasoning, planning, and executing complex analytical workflows
-- Designed microservices architecture (Django orchestration, FastAPI AI server, RabbitMQ code sandbox) with sophisticated caching achieving **95% time reduction** in dashboard generation
-- Enhanced robustness of industrial data connectors (SQL, OPC UA, MQTT) for real-time manufacturing data acquisition, improving reliability by **25%** and reducing latency by **40%**
-- Strengthened expertise in LiteLLM multi-provider integration, race strategy optimization, prompt engineering, RESTful API design, and distributed system architecture for production-grade AI applications
+- Engineered a multi-agent **"Prompt-to-Insights" (PTI)** analytics platform utilizing a hybrid LLM architecture and a vector-based semantic caching layer with **Retrieval-Augmented Generation (RAG)** to optimize query consistency, response latency, and code generation reliability.
+- Designed and deployed a custom **ReAct orchestration engine** in Django/FastAPI that translates natural language industrial queries into parameterized MongoDB queries, handling complex multi-level aggregations.
+- Engineered and optimized **data logging connectors** (transferring MQTT and PLC data to time-series databases) to significantly improve data transfer reliability and reduce ingestion latency for real-time manufacturing workloads.
 
 ---
 
@@ -52,60 +68,103 @@ Building intelligent **multi-agent systems** that autonomously reason, plan, and
 
 ### Project 1
 
-**Badge:** 🏆 Global ProveIt Conference 2025
+**Badge:** 🏆 Showcased at Global ProveIt Conference (USA)
 
-**Title:** Agentic AI-Powered Analytics Platform (Multi-Agent System)
+**Title:** Prompt-to-Insights (PTI) Analytics Engine
+
+**Role & Date:** Gen AI Developer | Jan 2026
 
 **Description:**
-Architected an advanced **Agentic AI platform** featuring autonomous agents that reason, plan, and execute complex data workflows. Built triple-module architecture (INTEGRATE-ANALYZE-VISUALIZE) with intelligent agents for conversational data source configuration and autonomous Python code generation. Engineered microservices system with Django orchestration, FastAPI AI server using **LiteLLM** for multi-provider LLM integration with **race strategy** for optimal response times, and RabbitMQ-based secure code execution sandbox. Implemented schema-aware agents with multi-step reasoning, sophisticated caching strategies (code + filtered code cache), and 15+ dynamic visualization types. Platform autonomously handles industrial IoT monitoring, real-time data analysis, and intelligent dashboard filtering. Presented at **Global ProveIt Conference 2025** (500+ attendees) as breakthrough innovation in **Agentic AI** applications.
+- **Tri-Module Enterprise Architecture**: Structured into **Integrate** (data source configuration & schema mapping), **Analyze** (natural language querying), and **Visualize** (dashboard management), streamlining end-to-end analytical report generation.
+- **Multi-Agent Analyze QA Engine**: Multi-agent LLM workflow utilizing fast models for intent parsing and parameterized query (PQ) generation, followed by VectorDB semantic cache lookup to ensure logic consistency against historical queries.
+- **Dynamic Code Generation & Validation Pipeline**: Developer agent dynamically writes and refines component-generation code, routing through automated verification stages before execution in a secure sandbox.
+- **Continuous Sentiment Feedback Loop**: User feedback (Thumbs Up/Down) integrated directly into VectorDB cache storage layer to continuously penalize or promote cached code performance.
 
-**Tech Stack:** LiteLLM, Django, FastAPI, RabbitMQ, MongoDB, Python, REST APIs
+**Tech Stack:** LangGraph, LiteLLM, Django, FastAPI, MongoDB, VectorDB / RAG, RabbitMQ, Python
 
 ### Project 2
 
-**Badge:** Product Development
+**Badge:** ⚙️ Full Stack AI Engine
 
-**Title:** Industrial Data Connectors Platform
+**Title:** Industrial IoT Tag Harmonization Engine
+
+**Role & Date:** Full Stack Developer | Mar 2026
 
 **Description:**
-Engineered and optimized robust data acquisition connectors for manufacturing industries, enabling seamless real-time data ingestion from SQL databases, OPC UA servers, and MQTT protocols. Improved connector reliability by **25%** and reduced data latency by **40%**, supporting critical production monitoring for enterprise clients.
+- **Multi-Model AI Mapping Pipeline**: Architected using FastAPI and LiteLLM to automatically map messy industrial IoT/SCADA tags to the **ISA-95 process hierarchy** (Enterprise, Site, Area, Work Center, and Process Units).
+- **High-Throughput Parallel Engine**: Handles bulk file uploads via threaded concurrency, executing multi-stage model generation and cross-validation loops to ensure optimal mapping precision.
+- **Strict Schema Enforcement & Zero Silent Drops**: Implemented automatic retries using Pydantic and Instructor, paired with a deterministic safety-net mechanism that guarantees zero silent drops for unmapped inputs.
+- **SME Refinement Loop**: Administrative SME feedback loop capturing expert corrections and dynamically injecting structured guidance into future pipeline iterations for continuous rule consistency.
 
-**Tech Stack:** Python, SQL, OPC UA, MQTT, Django, Flask, MongoDB
+**Tech Stack:** Python, FastAPI, LiteLLM, Pydantic & Instructor, MongoDB, Nginx, GCP, Docker
 
 ---
 
 ## Skills Section
 
-**Section Label:** Technical Expertise
+**Section Label:** Technical Stack
 
 **Section Title:** Skills & Technologies
 
-### Category 1: 🤖 AI & Machine Learning
+### Category 1: 🤖 AI & LLM Engineering
+- LangGraph
+- Multi-Agent Systems
+- VectorDB / RAG
+- Pydantic & Instructor
+- LiteLLM
 - Generative AI
-- LangChain
-- OpenAI GPT
-- Machine Learning
+- ReAct Prompting
+- Prompt Engineering
 
-### Category 2: 💻 Backend Development
+### Category 2: 💻 Backend & APIs
 - Python
+- FastAPI
 - Django
 - Flask
-- FastAPI
-- REST APIs
-- .NET
-- C#
+- RESTful APIs
+- Microservices
+- Asyncio / Threading
+- RabbitMQ
 
-### Category 3: 🗄️ Databases & Cloud
-- MongoDB
+### Category 3: 🗄️ Databases & Data
+- MongoDB (Aggregations)
+- Vector Databases
 - SQL
-- Google Cloud
-- AWS
+- Time-Series Databases
+- OPC UA Connectors
+- MQTT Protocol
 
-### Category 4: 🛠️ Tools & Other
-- Git
-- JavaScript
-- HTML/CSS
-- C++
+### Category 4: ☁️ DevOps & Tools
+- Git & GitHub
+- Linux / System Processes
+- Google Cloud (GCP)
+- Nginx
+- JavaScript (JS)
+- HTML5 / CSS3
+
+---
+
+## Education & Achievements Section
+
+**Section Label:** Background & Recognition
+
+**Section Title:** Education & Achievements
+
+### Education
+
+**Degree:** B.Tech in Artificial Intelligence and Data Science
+
+**Institution:** Vishwakarma Institute of Technology (VIT Pune)
+
+**Graduation:** May 2024 | **CGPA:** 8.7
+
+- Higher Secondary Education: 88.15% (March 2020)
+- Secondary Education: 93.60% (March 2018)
+
+### Achievements
+
+**Recognition:** Showcased at Global ProveIt Conference 2025 (USA) — Feb 2025
+- Developed an advanced natural language-driven analytics engine and industrial data pipeline for real-time dashboards; recognized as a top AI innovation and presented to an international audience of 500+ attendees.
 
 ---
 
@@ -114,25 +173,16 @@ Engineered and optimized robust data acquisition connectors for manufacturing in
 **Title:** Let's Build Something Amazing
 
 **Subtitle:**
-Open to collaborations, consulting, and full-time opportunities in AI/ML and backend development
+Open to conversations on Agentic AI systems, scalable backend architectures, and engineering roles.
 
 **Contact Links:**
 - Email: adityakanawade1234@gmail.com
 - LinkedIn: https://linkedin.com/in/AdityaKanawade0565
+- GitHub: https://github.com/AdityaKanawade0565
 - Phone: +91 9405657088
 
 ---
 
 ## Footer
 
-**Text:** © 2026 Aditya Kanawade. Crafted with precision and passion.
-
----
-
-## Notes for Editing
-
-- Text in **bold** will be highlighted in the portfolio
-- Keep bullet points concise and impact-focused
-- Use metrics and percentages to show achievements
-- Tech stack items should be comma-separated
-- Emojis in section titles and badges are optional but add visual interest
+**Text:** © 2026 Aditya Kanawade. Engineered with precision & passion.
